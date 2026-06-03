@@ -1,0 +1,85 @@
+<!DOCTYPE html> 
+<html lang="zh-TW"> 
+	<head> 
+		
+		<!-- 設定文件編碼為 UTF-8，避免中文亂碼 -->
+		<meta charset="UTF-8"> 
+		
+		<!-- 頁面標題 --> 
+		<title>甜點購物車</title> 
+		
+		<!-- 外部 CSS 樣式表 --> 
+		<link rel="stylesheet" href="cart_style.css"> 
+	</head> 
+	
+	<body> 
+		<!-- 網頁主要文字標題 --> 
+		<h1>甜點訂購</h1> 
+		
+		<!-- 訂購表單 --> 
+		<form id="orderForm" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfOnF9eqguXXLUKXsXa0f4igS7XT1vv_bi2mO_iMC0DSUdn-w/formResponse" method="POST" target="hidden_iframe"> 
+			<!-- 送到 Google Form 的表單 URL,使用 POST 方式送出資料,送出後不刷新頁面,將結果在隱藏 iframe 中處理 -->  
+			
+			<input type="hidden" id="formTotal" name="entry.1122453918">
+			
+			<!-- 表格id -->
+			<table id="productTable"> 
+				
+				<thead> <!--表格標題 -->
+					<tr> 
+						<th>商品圖片</th> <!-- 商品縮圖 --> 
+						<th>品名</th> <!-- 商品名稱 --> 
+						<th>價格</th> <!-- 商品單價 --> 
+						<th>數量</th> <!-- 使用者輸入數量 --> 
+						<th>小計</th> <!-- 小計 = 價格 × 數量 --> 
+					</tr> 
+				</thead> 
+				
+				
+				<tbody id="productBody"> <!--表格內容主體 -->
+					<!-- 透過js 輸出每個商品列在tbody中 --> 
+					
+				</tbody> 
+			</table> 
+			
+			<!-- 顯示總計金額 --> 
+			<div class="totalArea">總計：<span id="totalPrice">0</span> 元 
+				<!-- #totalPrice 會由 js 動態更新 -->
+			</div> 
+			
+		  <p><!--formTotal: 用來送出對應的總金額 -->
+			  <span>顧客姓名：</span>
+	          <input type="text" id="customer name" name="entry.763333288" required>
+		  </p>
+		  <p>		    <span>電話：</span>
+		    <input type="text" id="phone number" name="entry.187883289" required>
+	      </p>
+		  <p><span>電子郵件：</span>
+            <input type="text" id="email" name="entry.844041809" required>
+          </p>
+		  <p><label>付款方式:</label>
+		    <select id="payment" name="entry.1808610973" required>
+		     <option value="">請選擇</option>
+		     <option>匯款</option>
+		     <option>貨到付款+20</option>
+		     <option>信用卡</option>
+	        </select>
+		  </p>
+		  <button type="submit">送出訂購</button> <!-- 送出按鈕 -->
+		</form> 
+		
+		<!-- 隱藏 iframe 用來接收表單回傳，避免頁面跳轉 --> 
+		<iframe name="hidden_iframe" style="display:none;"></iframe> 
+		
+		
+		<!-- 帶入 JS 程式，負責：
+			1.讀取 CSV 商品資料 
+			2.讀取 CSV entryID
+			3.動態生成商品表格 
+			4.計算小計與總計
+			5.將資料填入 Google Form hidden input
+			6.綁定表單送出事件 --> 
+		<script src="cart_script.js"></script> 
+		
+	</body>
+</html>

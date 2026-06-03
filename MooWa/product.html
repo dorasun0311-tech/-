@@ -1,0 +1,204 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>產品介紹</title>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">	
+	
+	<style>
+		/* 確保本頁與品牌整體風格完美融合 */
+		body {
+			font-family: 'Noto Serif TC', serif;
+			background-color: #F9F5F0;
+			color: #835638;
+		}
+
+		/* 關鍵修改：將原本垂直拉長的 card 結構，強制改為扁平的「左右橫式」排版 */
+		.card-container {
+			display: flex !important;
+			flex-direction: column !important; /* 讓多張橫卡垂直排下來 */
+			gap: 30px !important;
+			max-width: 900px;
+			margin: 0 auto;
+		}
+
+		.card {
+			background: #ffffff !important;
+			border-radius: 20px !important;
+			padding: 20px !important;
+			box-shadow: 0 10px 30px rgba(131, 86, 56, 0.04) !important;
+			transition: transform 0.35s ease, box-shadow 0.35s ease !important;
+			border: 1px solid rgba(131, 86, 56, 0.03) !important;
+			
+			/* 扁平化魔法：使用 flex 讓圖片與文字左右並排 */
+			display: flex !important;
+			flex-direction: row !important;
+			align-items: center !important;
+			gap: 25px !important;
+			width: 100% !important;
+		}
+
+		.card:hover {
+			transform: translateY(-4px) !important;
+			box-shadow: 0 15px 35px rgba(131, 86, 56, 0.08) !important;
+		}
+
+		/* 限制圖片不要太大，改成方正偏橫的比例，縮短卡片高度 */
+		.card img {
+			border-radius: 12px !important;
+			width: 220px !important;
+			height: 180px !important;
+			object-fit: cover !important;
+			flex-shrink: 0 !important; /* 防止圖片被內容擠壓變形 */
+		}
+
+		/* 既然變成了左右並排，我們把原本大橫線改成「直的分隔線」，更像法式菜單 */
+		.card hr {
+			display: block !important;
+			border: none !important;
+			border-left: 1px dashed #E3B94E !important;
+			height: 140px !important;
+			margin: 0 !important;
+		}
+
+		/* 產品右側文字包裝區 */
+		.card-body {
+			flex: 1 !important;
+			display: flex !important;
+			flex-direction: column !important;
+			justify-content: center !important;
+		}
+
+		/* 產品資訊標籤排版 */
+		.info-badge-container {
+			display: grid;
+			grid-template-columns: 1fr;
+			gap: 6px;
+			background: #FDFBF9;
+			padding: 12px 15px;
+			border-radius: 12px;
+			margin-top: 10px;
+			border: 1px solid #F2EBE1;
+			text-align: left;
+		}
+		.info-row {
+			font-size: 13px;
+			line-height: 1.5;
+			color: #6d4c32;
+		}
+		.info-label {
+			color: #D8B94E;
+			font-weight: bold;
+			display: inline-block;
+			width: 70px;
+		}
+
+		/* 手機板優化：遇到小螢幕自動彈性變回原本的短直式 */
+		@media (max-width: 768px) {
+			.card {
+				flex-direction: column !important;
+				align-items: stretch !important;
+				gap: 15px !important;
+			}
+			.card img {
+				width: 100% !important;
+				height: 200px !important;
+			}
+			.card hr {
+				border-top: 1px dashed #E3B94E !important;
+				border-left: none !important;
+				width: 100% !important;
+				height: 1px !important;
+				margin: 5px 0 !important;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<div class="nav-container"></div>
+
+    <div class="content" style="max-width: 1100px; margin: 0 auto; padding: 40px 20px;">
+		
+		<div style="text-align: center; margin-bottom: 50px;">
+			<span style="font-size: 13px; color: #b3a292; display: block; letter-spacing: 3px; font-weight: bold; margin-bottom: 6px;">Our Menu</span>
+			<h1 style="font-size: 26px; color: #835638; font-weight: 700;">產品介紹</h1>
+			<div style="width: 30px; height: 1px; background-color: #E3B94E; margin: 15px auto 0 auto;"></div>
+		</div>
+
+		<section class="card-container">
+
+            <div class="card">
+                <img src="images/custom-cake.jpg" alt="鮮奶油客製化蛋糕">
+                <hr>
+                <div class="card-body">
+					<h2 style="font-size: 19px; color: #835638; margin: 0 0 6px 0; font-weight: 700;">鮮奶油客製化蛋糕</h2>
+					<p style="font-size: 13.5px; color: #a47e65; line-height: 1.6; margin-bottom: 8px;">
+						✨ 100%動物性鮮奶油 ｜ 4 ｜ 6 ｜ 8 吋可選 ｜ 風格裝飾歡迎私訊討論～<br>
+						<span style="font-size: 12.5px; color: #b88a6a;">（每顆皆附刀盤叉一組，可加購盤叉、蠟燭、卡片）</span>
+					</p>
+					
+					<div class="info-badge-container">
+						<div class="info-row"><span class="info-label">🧁 原料：</span>麵粉、牛奶、沙拉油、蛋黃、蛋白、鮮奶油、內餡(季節水果、布丁等)、糖、無鹽奶油</div>
+						<div class="info-row"><span class="info-label">⏳ 保存：</span>冷藏 0~7 度C 保存 3 天 ｜ <span class="info-label" style="width:auto;">📦 取貨：</span>工作室自取、lalamove 配送</div>
+					</div>
+                </div>
+			</div>
+
+            <div class="card">
+                <img src="images/basque-original.jpg" alt="巴斯克蛋糕">
+                <hr>
+                <div class="card-body">
+					<h2 style="font-size: 19px; color: #835638; margin: 0 0 6px 0; font-weight: 700;">巴斯克蛋糕</h2>
+					<p style="font-size: 13.5px; color: #a47e65; line-height: 1.6; margin-bottom: 8px;">
+						✨ 嚴選新鮮優質奶油乳酪 ｜ 4 ｜ 6 ｜ 8 吋可選 ｜ 如需鮮奶油裝飾歡迎私訊<br>
+						<span style="font-size: 12.5px; color: #b88a6a;">（每顆皆附刀盤叉一組，可加購盤叉、蠟燭、卡片）</span>
+					</p>
+					
+					<div class="info-badge-container">
+						<div class="info-row"><span class="info-label">🧁 原料：</span>奶油乳酪、糖、蛋、鮮奶油、麵粉</div>
+						<div class="info-row"><span class="info-label">⏳ 保存：</span>冷藏 0~7 度C 保存 3 天 ｜ <span class="info-label" style="width:auto;">📦 取貨：</span>工作室自取、lalamove 配送</div>
+					</div>
+                </div>
+			</div>
+
+            <div class="card">
+                <img src="images/cookie.jpg" alt="手工花花餅乾">
+                <hr>
+                <div class="card-body">
+					<h2 style="font-size: 19px; color: #835638; margin: 0 0 6px 0; font-weight: 700;">手工花花餅乾</h2>
+					<p style="font-size: 13.5px; color: #a47e65; line-height: 1.6; margin-bottom: 8px;">
+						✨ 活動點心首選！！不管是拿去辦公室分享還是送禮都非常適合～🌸
+					</p>
+					
+					<div class="info-badge-container">
+						<div class="info-row"><span class="info-label">🧁 原料：</span>麵粉、無鹽奶油、糖、蛋</div>
+						<div class="info-row"><span class="info-label">⏳ 保存：</span>室溫存放避免陽光直射 3-5 天 ｜ <span class="info-label" style="width:auto;">📦 取貨：</span>工作室自取、lalamove 配送</div>
+					</div>
+                </div>
+			</div>
+
+			<div class="card">
+                <img src="images/cheese-lemon.jpg" alt="乳酪蛋糕">
+                <hr>
+                <div class="card-body">
+					<h2 style="font-size: 19px; color: #835638; margin: 0 0 6px 0; font-weight: 700;">乳酪蛋糕</h2>
+					<p style="font-size: 13.5px; color: #a47e65; line-height: 1.6; margin-bottom: 8px;">
+						✨ 濃郁奶油乳酪搭配酥脆餅乾底 ｜ 4 ｜ 6 ｜ 8 吋可選 ｜ <span style="color: #d97706; font-weight: bold;">⚠️ 此系列含吉利丁，非素食</span><br>
+						<span style="font-size: 12.5px; color: #b88a6a;">（每顆皆附刀盤叉一組，可加購盤叉、蠟燭、卡片）</span>
+					</p>
+					
+					<div class="info-badge-container">
+						<div class="info-row"><span class="info-label">🧁 原料：</span>奶油乳酪、糖、鮮奶油、餅乾、無鹽奶油</div>
+						<div class="info-row"><span class="info-label">⏳ 保存：</span>冷藏 0~7 度C 保存 3 天 ｜ <span class="info-label" style="width:auto;">📦 取貨：</span>工作室自取、lalamove 配送</div>
+					</div>
+                </div>
+			</div>
+
+        </section>
+    </div>
+
+    <div class="footer"> </div><script src="main.js"></script>
+</body>
+</html>

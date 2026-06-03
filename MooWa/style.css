@@ -1,0 +1,367 @@
+/* ==========================================================================
+   1. 全域設定 (Global Styles)
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "PingFang TC", "Microsoft JhengHei", sans-serif;
+    color: #835638; /* 深可可棕 */
+    background-color: #fffaf7; /* 溫柔暖白底色 */
+    overflow-x: hidden;
+}
+
+/* ==========================================================================
+   2. 導覽列與共同元件 (預留給 nav.html 整合)
+   ========================================================================== */
+.navbar {
+    background: linear-gradient(135deg, #F7D5D6 0%, #CDE5F1 100%);
+    padding: 20px 0;
+    box-shadow: 0 4px 15px rgba(247, 213, 214, 0.6);
+    border-bottom: 3px dashed #fff;
+}
+.navbar ul { list-style: none; display: flex; justify-content: center; }
+.navbar li { margin: 0 20px; }
+.navbar a {
+    color: #835638; text-decoration: none; font-size: 18px; font-weight: bold;
+    padding: 6px 16px; border-radius: 20px; transition: all 0.3s ease;
+}
+.navbar a:hover { color: #835638; background-color: #F6F1B2; box-shadow: 0 4px 8px rgba(227, 185, 78, 0.3); transform: translateY(-2px); }
+
+/* ==========================================================================
+   3. Index 首頁主排版設計 (.content)
+   ========================================================================== */
+.content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* 標題通用樣式 */
+.section-title {
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+    color: #835638;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+}
+
+.section-block {
+    margin-bottom: 60px;
+    padding: 20px 0;
+}
+
+/* --- 標語1：主視覺橫幅 --- */
+.hero-banner {
+    text-align: center;
+    padding: 60px 20px;
+    background: radial-gradient(circle at top, #fffaf7, #F7D5D6 120%);
+    border-radius: 30px;
+    margin-bottom: 40px;
+    box-shadow: 0 10px 30px rgba(247, 213, 214, 0.3);
+}
+
+.hero-banner h1 {
+    font-size: 36px;
+    color: #835638;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 0px #fff;
+}
+
+.hero-banner .hero-sub {
+    font-size: 18px;
+    color: #E3B94E; /* 暖蜜金黃 */
+    font-weight: bold;
+}
+
+/* --- 標語2：熱門產品橫向滑動區區塊 --- */
+.slider-container {
+    display: flex;
+    gap: 30px;
+    overflow-x: auto; /* 核心：啟動橫向滑動 */
+    padding: 20px 15px 30px 15px;
+    scroll-behavior: smooth;
+    
+    /* 隱藏標準滾動條，讓畫面更乾淨 */
+    -webkit-overflow-scrolling: touch;
+}
+
+/* 自訂滑動條外觀，呈現粉嫩感 */
+.slider-container::-webkit-scrollbar {
+    height: 8px;
+}
+.slider-container::-webkit-scrollbar-track {
+    background: #fff;
+    border-radius: 10px;
+}
+.slider-container::-webkit-scrollbar-thumb {
+    background: #CDE5F1; /* 粉藍天空色滾動條 */
+    border-radius: 10px;
+}
+
+/* 商品卡片本體 */
+.slider-container .card {
+    position: relative; 
+    overflow: visible; /* 確保花花能露出來 */
+    flex: 0 0 280px;  /* 核心：固定每張卡片的寬度，不被壓縮 */
+    
+    background-color: #fff;
+    border: 2px solid #F7D5D6;
+    border-radius: 20px;
+    padding: 15px;
+    box-shadow: 0 8px 20px rgba(131, 86, 56, 0.06);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.slider-container .card:hover {
+    transform: translateY(-8px);
+    border-color: #E3B94E;
+    box-shadow: 0 15px 30px rgba(247, 213, 214, 0.8);
+}
+
+.slider-container .card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* 確保圖片不變形 */
+    border-radius: 12px;
+    margin-bottom: 12px;
+}
+
+.card-info h3 {
+    font-size: 18px;
+    color: #835638;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.card-info .price {
+    font-size: 16px;
+    color: #E3B94E;
+    font-weight: bold;
+    text-align: center;
+}
+
+.slider-container .card hr {
+    border: none;
+    border-top: 2px dashed #F6F1B2; /* 奶油淡黃虛線 */
+    margin: 10px 0;
+}
+
+.card-info .desc {
+    font-size: 14px;
+    color: #a47e65;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+/* --- 標語3：個人甜點工作室 --- */
+.studio-bg {
+    background: linear-gradient(135deg, #fffaf7 0%, #F6F1B2 100%); /* 奶油黃溫柔漸層 */
+    padding: 40px 30px;
+    border-radius: 30px;
+    border: 2px dashed #E3B94E;
+    text-align: center;
+}
+
+.studio-content .highlight {
+    font-size: 20px;
+    font-weight: bold;
+    color: #835638;
+    margin-bottom: 15px;
+}
+
+.studio-content .quote {
+    font-size: 16px;
+    font-style: italic;
+    color: #b38461;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+
+/* --- 標語4：產品分類卡片區 --- */
+.category-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.cate-card {
+    position: relative;
+    width: 30%;
+    min-width: 260px;
+    background-color: #fff;
+    border-radius: 25px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.03);
+    transition: all 0.3s ease;
+}
+
+/* 三種分類獨立的可愛少女邊框色 */
+.cate-pink { border: 3px solid #F7D5D6; }
+.cate-blue { border: 3px solid #CDE5F1; }
+.cate-yellow { border: 3px solid #F6F1B2; }
+
+.cate-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 12px 25px rgba(131, 86, 56, 0.15);
+}
+
+.cate-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 18px;
+    margin-bottom: 15px;
+}
+
+.cate-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #835638;
+    letter-spacing: 1px;
+}
+
+
+/* ==========================================================================
+   4. 頁尾與 RWD (Footer & Responsive)
+   ========================================================================== */
+footer {
+    background-color: #835638; color: #fffaf7;
+    padding: 30px 40px; border-top: 4px dashed #F6F1B2;
+    display: flex; justify-content: center; align-items: center; flex-direction: column; gap: 15px;
+}
+footer p { font-size: 15px; font-weight: bold; }
+.social-icons { display: flex; gap: 12px; }
+.social-icons a {
+    text-decoration: none; color: #835638; background-color: #F7D5D6;
+    width: 38px; height: 38px; display: flex; justify-content: center; align-items: center; border-radius: 50%;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.social-icons a:hover { background-color: #E3B94E; transform: scale(1.15) translateY(-3px); }
+
+/* RWD 響應式優化 */
+@media (max-width: 768px) {
+    .cate-card { width: 45%; }
+    .hero-banner h1 { font-size: 28px; }
+}
+
+@media (max-width: 480px) {
+    .cate-card { width: 100%; }
+    .hero-banner h1 { font-size: 22px; }
+}
+/* ==========================================================================
+   6. 公司介紹頁面專用樣式 (About Page Styles)
+   ========================================================================== */
+.about-hero {
+    text-align: center;
+    padding: 40px 20px 20px 20px;
+}
+.about-hero h1 {
+    font-size: 32px;
+    color: #835638;
+    text-shadow: 2px 2px 0px #fff;
+    margin-bottom: 10px;
+}
+.about-hero .about-subtitle {
+    font-size: 15px;
+    color: #b38461;
+    letter-spacing: 1px;
+}
+
+/* 介紹區塊外框：像手帳貼紙一樣圓潤 */
+.about-section {
+    position: relative;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 35px 30px;
+    border-radius: 24px;
+    box-shadow: 0 8px 20px rgba(131, 86, 56, 0.05);
+    background-color: #fff;
+}
+
+/* 創立背景帶有淡淡櫻花粉邊框 */
+.bg-story { border: 2px solid #F7D5D6; }
+/* Logo理念帶有淡淡粉藍天空邊框 */
+.bg-logo { border: 2px solid #CDE5F1; }
+
+.about-section h2 {
+    font-size: 22px;
+    color: #835638;
+    margin-bottom: 20px;
+    display: inline-block;
+    border-bottom: 2px dashed #E3B94E; /* 蜜黃色裝飾底線 */
+    padding-bottom: 5px;
+}
+
+/* 可愛標籤 */
+.about-badge {
+    position: absolute;
+    top: -15px;
+    left: 25px;
+    background-color: #F7D5D6;
+    color: #835638;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 4px 12px;
+    border-radius: 10px;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+.badge-yellow { background-color: #F6F1B2; }
+
+/* 文字內容排版 */
+.about-text p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #835638;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+.about-text p:last-child { margin-bottom: 0; }
+
+/* 特調強調文字顏色 */
+.about-text .highlight-p {
+    font-weight: bold;
+    color: #E3B94E;
+}
+.about-text .text-accent {
+    background: linear-gradient(transparent 60%, #F6F1B2 60%); /* 奶油黃螢光筆劃記效果 */
+    font-weight: bold;
+}
+.about-text strong {
+    color: #835638;
+    font-weight: bold;
+}
+/* --- Logo 圖片的外框與擺放位置調整 --- */
+.about-logo-wrapper {
+    text-align: center;      /* 讓 Logo 置中 */
+    margin: 25px auto;       /* 與上下文字保持可愛的氣泡距離 */
+    max-width: 350px;        /* 限制 Logo 的最大寬度，避免太大顆 */
+}
+
+.about-logo-img {
+    width: 100%;             /* 寬度自動適應外框 */
+    height: auto;            /* 高度等比例縮放 */
+    border: 3px solid #F7D5D6; /* 幫 Logo 加上精緻的櫻花粉框線 */
+    border-radius: 24px;     /* 柔和的大圓角造型 */
+    background-color: #fff;  /* 如果 Logo 是去背的，這行可以補上白底 */
+    padding: 10px;           /* 讓圖片跟粉紅框線中間有一點點留白空間 */
+    box-shadow: 0 6px 15px rgba(247, 213, 214, 0.4); /* 蓬鬆的夢幻陰影 */
+    transition: all 0.3s ease; /* 啟動平滑動畫 */
+}
+
+/* 當滑鼠移到 Logo 圖片上時，會可愛地微微浮起並加深粉紅光芒 */
+.about-logo-img:hover {
+    transform: translateY(-4px) scale(1.03);
+    border-color: #E3B94E;   /* 邊框悄悄變成暖蜜金黃色 */
+    box-shadow: 0 10px 20px rgba(227, 185, 78, 0.3);
+}

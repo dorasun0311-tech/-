@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>活動日常</title>
+    <!-- 引入高質感思源宋體 -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="background-color: #F9F5F0; font-family: 'Noto Serif TC', serif; margin: 0; padding: 0;"> <!-- 背景改為溫柔燕麥奶色 -->
+
+   <div class="nav-container"></div>
+
+    <!-- Main -->
+    <div class="content" style="max-width: 1050px; margin: 0 auto; padding: 0 20px;">
+        
+        <!-- 1. Hero 區塊 (大張橫幅照片 + 溫暖太妃糖透明疊色) -->
+        <header style="margin-top: 30px; height: 420px; background-image: url('images/hero-activity.jpg'); background-size: cover; background-position: center; border-radius: 20px; position: relative; overflow: hidden; box-shadow: 0 10px 30px rgba(131, 86, 56, 0.05);">
+            <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(131, 86, 56, 0.15); display: flex; align-items: center; justify-content: center;">
+                <div style="text-align: center; background-color: rgba(249, 245, 240, 0.92); padding: 35px 55px; border-radius: 16px; box-shadow: 0 15px 35px rgba(131, 86, 56, 0.08); border: 1px solid rgba(227, 185, 78, 0.3);">
+                    <span style="font-size: 13px; color: #E3B94E; display: block; margin-bottom: 8px; letter-spacing: 3px; font-weight: bold;">MooWa Daily</span>
+                    <h1 style="font-size: 26px; font-weight: 700; color: #835638; letter-spacing: 3px; margin: 0;">把甜點帶進每個日常片刻</h1>
+                </div>
+            </div>
+        </header>
+
+        <!-- 區塊大標題 -->
+        <div style="text-align: center; margin: 90px 0 60px 0;">
+            <span style="font-size: 13px; color: #b3a292; display: block; letter-spacing: 3px; font-weight: bold;">Our Journal</span>
+            <h2 style="font-size: 24px; color: #835638; margin-top: 8px; font-weight: 700; position: relative; display: inline-block;">市集日常與片刻</h2>
+        </div>
+
+        <!-- 2. 活動日常區 (精緻雜誌感左右交錯，搭配太妃糖暖調襯底) -->
+        <div style="display: flex; flex-direction: column; gap: 70px; margin-bottom: 90px;">
+            
+            <!-- 日記 1：左圖右文 -->
+            <article style="display: flex; align-items: center; justify-content: space-between; gap: 0; flex-wrap: wrap; background-color: #F2EBE1; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 25px rgba(131, 86, 56, 0.04);">
+                <div style="flex: 1.2; min-width: 300px;">
+                    <img src="images/activity.jpg" alt="活動照片1" style="width: 100%; height: 360px; object-fit: cover; display: block;">
+                </div>
+                <div style="flex: 1; min-width: 280px; padding: 40px 50px;">
+                    <span style="color: #E3B94E; font-size: 14px; display: block; margin-bottom: 15px; border-bottom: 2px dashed #E3B94E; width: 80px; padding-bottom: 5px; font-weight: bold;">Journal 01</span>
+                    <p style="font-size: 18px; color: #835638; line-height: 1.8; letter-spacing: 1px; margin: 0; font-weight: 500;">今天也帶著甜點與大家見面</p>
+                </div>
+            </article>
+
+            <!-- 日記 2：右圖左文 (HTML 順序對調，達成無痛交錯) -->
+            <article style="display: flex; align-items: center; justify-content: space-between; gap: 0; flex-wrap: wrap; background-color: #F2EBE1; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 25px rgba(131, 86, 56, 0.04);">
+                <div style="flex: 1; min-width: 280px; padding: 40px 50px;">
+                    <span style="color: #E3B94E; font-size: 14px; display: block; margin-bottom: 15px; border-bottom: 2px dashed #E3B94E; width: 80px; padding-bottom: 5px; font-weight: bold;">Journal 02</span>
+                    <p style="font-size: 18px; color: #835638; line-height: 1.8; letter-spacing: 1px; margin: 0; font-weight: 500;">很開心有人特地回來找我們</p>
+                </div>
+                <div style="flex: 1.2; min-width: 300px;">
+                    <img src="images/activity2.jpg" alt="活動照片2" style="width: 100%; height: 360px; object-fit: cover; display: block;">
+                </div>
+            </article>
+
+            <!-- 日記 3：左圖右文 -->
+            <article style="display: flex; align-items: center; justify-content: space-between; gap: 0; flex-wrap: wrap; background-color: #F2EBE1; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 25px rgba(131, 86, 56, 0.04);">
+                <div style="flex: 1.2; min-width: 300px;">
+                    <img src="images/activity3.jpg" alt="活動照片3" style="width: 100%; height: 360px; object-fit: cover; display: block;">
+                </div>
+                <div style="flex: 1; min-width: 280px; padding: 40px 50px;">
+                    <span style="color: #E3B94E; font-size: 14px; display: block; margin-bottom: 15px; border-bottom: 2px dashed #E3B94E; width: 80px; padding-bottom: 5px; font-weight: bold;">Journal 03</span>
+                    <p style="font-size: 18px; color: #835638; line-height: 1.8; letter-spacing: 1px; margin: 0; font-weight: 500;">每次出攤都是珍貴回憶</p>
+                </div>
+            </article>
+
+            <!-- 日記 4：右圖左文 -->
+            <article style="display: flex; align-items: center; justify-content: space-between; gap: 0; flex-wrap: wrap; background-color: #F2EBE1; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 25px rgba(131, 86, 56, 0.04);">
+                <div style="flex: 1; min-width: 280px; padding: 40px 50px;">
+                    <span style="color: #E3B94E; font-size: 14px; display: block; margin-bottom: 15px; border-bottom: 2px dashed #E3B94E; width: 80px; padding-bottom: 5px; font-weight: bold;">Journal 04</span>
+                    <p style="font-size: 18px; color: #835638; line-height: 1.8; letter-spacing: 1px; margin: 0; font-weight: 500;">謝謝停下腳步的每個人</p>
+                </div>
+                <div style="flex: 1.2; min-width: 300px;">
+                    <img src="images/activity4.jpg" alt="活動照片4" style="width: 100%; height: 360px; object-fit: cover; display: block;">
+                </div>
+            </article>
+
+        </div>
+
+        <!-- 3. 食品業者登錄區 (與網頁底色呼應，營造安心與溫暖的品牌信任感) -->
+        <section style="margin-bottom: 100px; padding: 40px; background-color: #F2EBE1; border-radius: 20px; border-left: 6px solid #E3B94E; box-shadow: 0 10px 30px rgba(131, 86, 56, 0.03); display: flex; align-items: center; gap: 40px; flex-wrap: wrap;">
+            <div style="width: 140px; flex-shrink: 0; margin: 0 auto;">
+                <img src="images/license.jpg" alt="食品業者登錄" style="width: 100%; height: auto; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+            </div>
+            <div style="flex: 1; min-width: 250px; text-align: left;">
+                <h3 style="font-size: 20px; color: #835638; margin-bottom: 10px; font-weight: 700;">安心製作・合法登錄</h3>
+                <p style="font-size: 15px; color: #a47e65; line-height: 1.8; margin: 0;">我們已完成食品業者登錄，希望每份甜點都能讓大家安心享用。</p>
+            </div>
+        </section>
+
+    </div>
+	
+<div class="footer"> </div><!-- Footer -->
+<script src="main.js"></script>
+
+</body>
+</html>

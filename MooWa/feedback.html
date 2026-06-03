@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>好評分享</title>
+    <!-- 引入文青雜誌感字體 -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- 局部獨立特效：負責淡入、不規則卡片漂浮、微幅旋轉與 RWD 手機優化 -->
+    <style>
+        html { scroll-behavior: smooth; }
+        .fade-in-up {
+            animation: fadeInUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        /* 錯落留言卡片的懸停漂浮特效 */
+        .feedback-card {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        }
+        .feedback-card:hover {
+            transform: translateY(-8px) scale(1.02) !important;
+            box-shadow: 0 20px 35px rgba(131, 86, 56, 0.08) !important;
+            z-index: 10;
+        }
+        /* 針對手機板進行格狀優化，防止卡片旋轉造成溢出 */
+        @media (max-width: 768px) {
+            .wall-grid {
+                grid-template-columns: 1fr !important;
+                gap: 25px !important;
+                padding: 0 10px !important;
+            }
+            .feedback-card {
+                transform: none !important;
+            }
+            .feedback-card:hover {
+                transform: translateY(-5px) !important;
+            }
+            .hero-title { font-size: 22px !important; line-height: 1.6 !important; }
+            .philosophy-box { padding: 40px 20px !important; }
+        }
+    </style>
+</head>
+<body style="background-color: #F9F5F0; font-family: 'Noto Serif TC', serif; margin: 0; padding: 0; color: #835638;">
+
+   <div class="nav-container"></div>
+
+    <!-- Main -->
+    <div class="content" style="max-width: 1100px; margin: 0 auto; padding: 0 20px;">
+        
+        <!-- 1. Hero 區塊 (高級留白、微霧幾何裝飾、韓系雜誌感) -->
+        <header class="fade-in-up" style="position: relative; margin: 40px 0 80px 0; padding: 100px 40px; background: radial-gradient(circle at 10% 10%, #fffaf7, #F2EBE1 100%); border-radius: 24px; text-align: center; overflow: hidden; box-shadow: 0 10px 30px rgba(131, 86, 56, 0.03);">
+            <!-- 柔和的霧感幾何圓形裝飾 -->
+            <div style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background-color: rgba(247, 213, 214, 0.3); border-radius: 50%; filter: blur(20px);"></div>
+            <div style="position: absolute; bottom: -30px; left: -30px; width: 150px; height: 150px; background-color: rgba(205, 229, 241, 0.3); border-radius: 50%; filter: blur(15px);"></div>
+            
+            <div style="position: relative; z-index: 1; max-width: 700px; margin: 0 auto;">
+                <span style="font-family: 'Noto Serif TC', serif; font-style: italic; font-size: 16px; color: #D8B94E; display: block; margin-bottom: 15px; letter-spacing: 3px; font-weight: bold;">MooWa Guestbook</span>
+                <h1 class="hero-title" style="font-size: 28px; font-weight: 700; color: #835638; line-height: 1.8; letter-spacing: 2px; margin-bottom: 20px;">
+                    謝謝每一句喜歡，<br>都成為我們繼續製作甜點的理由。
+                </h1>
+                <div style="width: 30px; height: 1px; background-color: #835638; margin: 25px auto;"></div>
+                <p style="font-size: 15px; color: #a47e65; letter-spacing: 1.5px; margin: 0;">來自每位客人的真實回饋與日常甜點時光</p>
+            </div>
+        </header>
+
+        <!-- 2. 顧客好評分享區 (不規則錯落排列留言牆) -->
+        <section class="fade-in-up" style="margin-bottom: 100px; animation-delay: 0.2s;">
+            <!-- 使用 CSS Grid 搭配不同的內距與旋轉，手工打造精緻的不規則生活感 -->
+            <div class="wall-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 35px; align-items: start;">
+                
+                <!-- 卡片 1 (原味巴斯克 / 微左偏) -->
+                <div class="feedback-card" style="background-color: #ffffff; padding: 30px; border-radius: 16px; box-shadow: 0 10px 25px rgba(131, 86, 56, 0.03); transform: rotate(-1.5deg); border-top: 4px solid #F7D5D6;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                        <span style="font-weight: 700; font-size: 16px;">小愛 🌿</span>
+                        <span style="font-size: 13px; color: #b3a292; font-family: 'Playfair Display', serif;">2026.04.12</span>
+                    </div>
+                    <div style="color: #D8B94E; font-size: 14px; margin-bottom: 12px;">★★★★★</div>
+                    <p style="font-size: 15px; line-height: 1.7; color: #5c412c; margin-bottom: 15px; text-align: justify;">
+                        「原味巴斯克真的超濃郁，但完全不膩！下午切一塊配黑咖啡，整個人都被治癒了。已經回購第三次了！」
+                    </p>
+                    <span style="font-size: 12px; color: #a47e65; background-color: #F9F5F0; padding: 4px 10px; border-radius: 20px;">#原味巴斯克</span>
+                </div>
+
+                <!-- 卡片 2 (抹茶巴斯克 / 微右偏) -->
+                <div class="feedback-card" style="background-color: #ffffff; padding: 30px; border-radius: 16px; box-shadow: 0 10px 25px rgba(131, 86, 56, 0.03); transform: rotate(1deg); border-top: 4px solid #CDE5F1; margin-top: 20px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                        <span style="font-weight: 700; font-size: 16px;">Wei Wei</span>
+                        <span style="font-size: 13px; color: #b3a292; font-family: 'Playfair Display', serif;">2026.04.28</span>
+                    </div>
+                    <div style="color: #D8B94E; font-size: 14px; margin-bottom: 12px;">★★★★★</div>
+                    <p style="font-size: 15px; line-height: 1.7; color: #5c412c; margin-bottom: 15px; text-align: justify;">
+                        「抹茶口味很高級，茶香很舒服。入口即化的絲滑感做得太棒了，不是那種死甜的抹茶，推推！」
+                    </p>
+                    <span style="font-size: 12px; color: #a47e65; background-color: #F9F5F0; padding: 4px 10px; border-radius: 20px;">#抹茶巴斯克</span>
+                </div>
+
+                <!-- 卡片 3 (青檸乳酪 / 不旋轉) -->
+                <div class="feedback-card" style="background-color: #ffffff; padding: 30px; border-radius: 16px; box-shadow: 0 10px 25px rgba(131, 86, 56, 0.03); border-top: 4px solid #F6F1B2;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                        <span style="font-weight: 700; font-size: 16px;">晴天 ☀️</span>
+                        <span style="font-size: 13px; color: #b3a292; font-family: 'Playfair Display', serif;">2026.05.05</span>
+                    </div>
+                    <div style="color: #D8B94E; font-size: 14px; margin-bottom: 12px;">★★★★★</div>
+                    <p style="font-size: 15px; line-height: 1.7; color: #5c412c; margin-bottom: 15px; text-align: justify;">
+                        「清檸乳酪超適合夏天。酸酸甜甜的檸檬香氣把乳酪的厚重感平衡得剛剛好，一不小心自己就吃掉半個...」
+                    </p>
+                    <span style="font-size: 12px; color: #a47e65; background-color: #F9F5F0; padding: 4px 10px; border-radius: 20px;">#青檸乳酪蛋糕</span>
+                </div>
+
+                <!-- 卡片 4 (客製化蛋糕 / 微右偏) -->
+                <div class="feedback-card" style="background-color: #ffffff; padding: 30px; border-radius: 16px; box-shadow: 0 10px 25px rgba(131, 86, 56, 0.03); transform: rotate(1.5deg); border-top: 4px solid #F7D5D6; margin-top: 10px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                        <span style="font-weight: 700; font-size: 16px;">Yu-Han</span>
+                        <span style="font-size: 13px; color: #b3a292; font-family: 'Playfair Display', serif;">2026.05.14</span>
+                    </div>
+                    <div style="color: #D8B94E; font-size: 14px; margin-bottom: 12px;">★★★★★</div>
+                    <p style="font-size: 15px; line-height: 1.7; color: #5c412c; margin-bottom: 15px; text-align: justify;">
+                        「客製化蛋糕比想像中還精緻！慶生端出來大家都在尖叫拍照。而且鮮奶油完全不膩，長輩和小朋友都很喜歡，非常滿意！」
+                    </p>
+                    <span style="font-size: 12px; color: #a47e65; background-color: #F9F5F0; padding: 4px 10px; border-radius: 20px;">#鮮奶油客製化糕糕</span>
+                </div>
+
+                <!-- 卡片 5 (巧克力巴斯克 / 微左偏) -->
+                <div class="feedback-card" style="background-color: #ffffff; padding: 30px; border-radius: 16px; box-shadow: 0 10px 25px rgba(131, 86, 56, 0.03); transform: rotate(-1deg); border-top: 4px solid #CDE5F1;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                        <span style="font-weight: 700; font-size: 16px;">阿銘 🍫</span>
+                        <span style="font-size: 13px; color: #b3a292; font-family: 'Playfair Display', serif;">2026.05.19</span>
+                    </div>
+                    <div style="color: #D8B94E; font-size: 14px; margin-bottom: 12px;">★★★★★</div>
+                    <p style="font-size: 15px; line-height: 1.7; color: #5c412c; margin-bottom: 15px; text-align: justify;">
+                        「巧克力巴斯克苦甜比例很剛好。帶有大人感的微苦可可香，跟濃郁乳酪融合成一種很高級的口感，重口味愛好者必選！」
+                    </p>
+                    <span style="font-size: 12px; color: #a47e65; background-color: #F9F5F0; padding: 4px 10px; border-radius: 20px;">#巧克力巴斯克</span>
+                </div>
+
+                <!-- 卡片 6 (手工餅乾 / 微右偏) -->
+                <div class="feedback-card" style="background-color: #ffffff; padding: 30px; border-radius: 16px; box-shadow: 0 10px 25px rgba(131, 86, 56, 0.03); transform: rotate(2deg); border-top: 4px solid #F6F1B2; margin-top: 15px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                        <span style="font-weight: 700; font-size: 16px;">甜點控日常</span>
+                        <span style="font-size: 13px; color: #b3a292; font-family: 'Playfair Display', serif;">2026.05.25</span>
+                    </div>
+                    <div style="color: #D8B94E; font-size: 14px; margin-bottom: 12px;">★★★★★</div>
+                    <p style="font-size: 15px; line-height: 1.7; color: #5c412c; margin-bottom: 15px; text-align: justify;">
+                        「在市集買的花花奶油餅乾配咖啡超療癒！口感很酥脆，奶香味很純。重點是形狀真的太可愛了，捨不得吃完～」
+                    </p>
+                    <span style="font-size: 12px; color: #a47e65; background-color: #F9F5F0; padding: 4px 10px; border-radius: 20px;">#手工奶油餅乾</span>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 3. 品牌理念區 (淡奶油背景、極簡細線裝飾、高級感留白) -->
+        <section class="fade-in-up philosophy-box" style="animation-delay: 0.4s; margin-bottom: 100px; padding: 60px 40px; background-color: #F2EBE1; border-radius: 24px; text-align: center; position: relative; border: 1px solid rgba(131, 86, 56, 0.05);">
+            <div style="max-width: 600px; margin: 0 auto;">
+                <div style="width: 25px; height: 1px; background-color: #D8B94E; margin: 0 auto 15px auto;"></div>
+                <h2 style="font-size: 22px; font-weight: 700; color: #835638; letter-spacing: 3px; margin-bottom: 25px;">甜點不只是甜點</h2>
+                <p style="font-size: 16px; line-height: 2; color: #5c412c; letter-spacing: 1.5px; margin: 0; font-weight: 400;">
+                    我們希望每一份甜點，<br>
+                    都能成為忙碌生活中的小小療癒，<br>
+                    也收藏每個值得紀念的日常時刻。
+                </p>
+                <div style="width: 25px; height: 1px; background-color: #D8B94E; margin: 25px auto 0 auto;"></div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="footer"> </div>
+<script src="main.js"></script>
+
+</body>
+</html>

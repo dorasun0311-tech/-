@@ -1,0 +1,699 @@
+<!doctype html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<title>聯繫我們</title> 
+<!-- 引入高質感思源宋體 -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    /* 將字體更改為與品牌風格搭配的思源宋體 */
+    font-family: "Noto Serif TC", serif; 
+    background:#fffdf9;
+    color:#835638;
+    overflow-x:hidden;
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.content{
+    width:100%;
+    background:linear-gradient(to bottom,#fffdf9,#fdf6ef);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.contact-hero{
+    position:relative;
+    width:100%;
+    min-height:90vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    overflow:hidden;
+    padding:80px 20px;
+}
+
+.contact-hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+    linear-gradient(rgba(246,241,178,0.45),rgba(246,241,178,0.55)),
+    ;
+    transform:scale(1.05);
+}
+
+.hero-inner{
+    position:relative;
+    z-index:2;
+    max-width:850px;
+    animation:fadeUp 1.5s ease;
+}
+
+.hero-inner h1{
+    /* 調整字級大小，使其更溫柔、具備高級留白感 */
+    font-size:clamp(32px, 5vw, 46px);
+    color:#835638;
+    margin-bottom:25px;
+    font-weight:700;
+    letter-spacing:2px;
+}
+
+.hero-inner p{
+    font-size:18px;
+    color:#6d4c32;
+    line-height:1.9;
+    margin-bottom:40px;
+}
+
+.hero-btn{
+    display:inline-block;
+    padding:18px 42px;
+    border-radius:999px;
+    background:#B88A6A;
+    color:white;
+    text-decoration:none;
+    font-size:16px;
+    letter-spacing:1px;
+    transition:0.4s ease;
+    box-shadow:0 12px 30px rgba(131,86,56,0.25);
+}
+
+.hero-btn:hover{
+    transform:translateY(-5px) scale(1.05);
+    box-shadow:0 18px 35px rgba(131,86,56,0.35);
+    background:#835638;
+}
+/* =========================
+   CONTACT SECTION
+========================= */
+
+.contact-section{
+    padding:120px 8%;
+}
+
+.contact-wrapper{
+    display:grid;
+    grid-template-columns:1.2fr 0.8fr;
+    gap:40px;
+    align-items:start;
+}
+
+/* FORM */
+
+.contact-form{
+    background:rgba(255,255,255,0.55);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,0.5);
+    border-radius:35px;
+    padding:45px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.08);
+    animation:fadeUp 1.4s ease;
+}
+
+.contact-form h2{
+    font-size:32px;
+    margin-bottom:30px;
+    color:#835638;
+}
+
+.form-group{
+    margin-bottom:22px;
+}
+
+.form-group label{
+    display:block;
+    margin-bottom:10px;
+    font-size:14px;
+    color:#835638;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+    /* 同步將輸入框字體套用思源宋體，維持品牌調性一致 */
+    font-family: "Noto Serif TC", serif;
+    width:100%;
+    padding:16px 18px;
+    border:none;
+    border-radius:18px;
+    background:rgba(255,255,255,0.9);
+    box-shadow:inset 0 0 0 1px rgba(0,0,0,0.04);
+    font-size:15px;
+    transition:0.35s ease;
+    outline:none;
+}
+
+.form-group textarea{
+    min-height:160px;
+    resize:none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+    box-shadow:
+    0 0 0 3px rgba(216,185,78,0.18),
+    0 10px 25px rgba(216,185,78,0.15);
+    transform:translateY(-2px);
+}
+
+.submit-btn{
+    /* 同步按鈕字體 */
+    font-family: "Noto Serif TC", serif;
+    width:100%;
+    padding:18px;
+    border:none;
+    border-radius:999px;
+    background:#9A6B4A;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.4s ease;
+    box-shadow:0 10px 25px rgba(131,86,56,0.2);
+}
+
+.submit-btn:hover{
+    transform:translateY(-4px) scale(1.02);
+    box-shadow:0 18px 35px rgba(131,86,56,0.28);
+    background:#835638;
+}
+
+/* INFO CARD */
+
+.info-card{
+    background:linear-gradient(145deg,#fff9f2,#ffffff);
+    border-radius:35px;
+    padding:45px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.08);
+    animation:fadeUp 1.8s ease;
+}
+
+.info-card h3{
+    font-size:30px;
+    margin-bottom:25px;
+}
+
+.info-card p{
+    line-height:1.9;
+    margin-bottom:18px;
+    color:#6f5b4d;
+}
+
+.brand-quote{
+    margin-top:30px;
+    padding:25px;
+    border-radius:25px;
+    background:linear-gradient(135deg,#F7D5D6,#F6F1B2);
+    font-size:18px;
+    line-height:1.8;
+    color:#835638;
+}
+
+.social-group{
+    margin-top:35px;
+    display:flex;
+    gap:16px;
+    flex-wrap:wrap;
+}
+
+.social-btn{
+    width:56px;
+    height:56px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#f9f4ef;
+    color:#835638;
+    text-decoration:none;
+    font-size:20px;
+    transition:0.35s ease;
+    box-shadow:0 10px 20px rgba(0,0,0,0.06);
+}
+
+.social-btn:hover{
+    transform:translateY(-6px);
+    background:#D8B94E;
+    color:white;
+}
+
+/* =========================
+   FAQ
+========================= */
+
+.faq-section{
+    padding:120px 8%;
+    background:linear-gradient(to bottom,#fffaf4,#fffefc);
+}
+
+.section-title{
+    text-align:center;
+    font-size:42px;
+    margin-bottom:60px;
+    color:#835638;
+}
+
+.faq-container{
+    max-width:900px;
+    margin:auto;
+}
+
+.faq-item{
+    background:white;
+    border-radius:25px;
+    margin-bottom:20px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,0.06);
+    transition:0.35s ease;
+}
+
+.faq-item:hover{
+    transform:translateY(-3px);
+}
+
+.faq-question{
+    /* 同步常見問題按鈕字體 */
+    font-family: "Noto Serif TC", serif;
+    width:100%;
+    padding:26px 30px;
+    border:none;
+    background:none;
+    text-align:left;
+    font-size:18px;
+    color:#835638;
+    cursor:pointer;
+    position:relative;
+}
+
+.faq-question::after{
+    content:"+";
+    position:absolute;
+    right:30px;
+    top:24px;
+    font-size:24px;
+}
+
+.faq-answer{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height 0.5s ease;
+    padding:0 30px;
+}
+
+.faq-answer p{
+    padding-bottom:28px;
+    color:#6f5b4d;
+    line-height:1.9;
+}
+
+/* =========================
+   EMOTION SECTION
+========================= */
+
+.emotion-section{
+    padding:120px 8%;
+}
+
+.emotion-box{
+    position:relative;
+    border-radius:40px;
+    overflow:hidden;
+    min-height:500px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    background:
+    linear-gradient(rgba(246,241,178,0.45),rgba(247,213,214,0.45)),
+    url('images/background.jpg') center/cover no-repeat;
+    box-shadow:0 20px 50px rgba(0,0,0,0.08);
+}
+
+.emotion-box::before,
+.emotion-box::after{
+    content:"🍓";
+    position:absolute;
+    font-size:40px;
+    animation:float 5s ease-in-out infinite;
+}
+
+.emotion-box::before{
+    top:40px;
+    left:60px;
+}
+
+.emotion-box::after{
+    bottom:40px;
+    right:60px;
+}
+
+.emotion-content{
+    padding:30px;
+    backdrop-filter:blur(5px);
+}
+
+.emotion-content h2{
+    font-size:clamp(34px,5vw,62px);
+    color:#835638;
+    line-height:1.4;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(0px);
+    }
+    50%{
+        transform:translateY(-15px);
+    }
+    100%{
+        transform:translateY(0px);
+    }
+}
+
+/* =========================
+   RWD
+========================= */
+
+@media(max-width:992px){
+
+.contact-wrapper{
+    grid-template-columns:1fr;
+}
+
+.hero-inner h1{
+    /* 手機板同步等比例縮減 */
+    font-size:36px;
+}
+
+.section-title{
+    font-size:34px;
+}
+
+}
+
+@media(max-width:768px){
+
+.contact-section,
+.faq-section,
+.emotion-section{
+    padding:90px 20px;
+}
+
+.contact-form,
+.info-card{
+    padding:30px;
+    border-radius:28px;
+}
+
+.hero-inner h1{
+    /* 手機板同步等比例縮減 */
+    font-size:28px;
+}
+
+.hero-inner p{
+    font-size:16px;
+}
+
+.emotion-box{
+    min-height:380px;
+}
+
+.emotion-content h2{
+    font-size:34px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="nav-container"></div>
+
+<!-- Main -->
+<div class="content">
+
+    <!-- HERO -->
+    <section class="contact-hero">
+
+        <div class="hero-inner">
+
+            <h1>期待收到你的訊息與故事</h1>
+
+            <p>
+                每一份甜點，都想為你帶來一點幸福。
+            </p>
+
+            <a href="#contact-form" class="hero-btn">
+                聯繫我們
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact-section" id="contact-form">
+
+        <div class="contact-wrapper">
+
+            <!-- FORM -->
+            <div class="contact-form">
+
+                <h2>送一封甜點訊息 ♡</h2>
+
+                <div class="form-group">
+                    <label>姓名</label>
+                    <input type="text" placeholder="請輸入您的姓名">
+                </div>
+
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" placeholder="example@email.com">
+                </div>
+
+                <div class="form-group">
+                    <label>電話</label>
+                    <input type="text" placeholder="請輸入聯絡電話">
+                </div>
+
+                <div class="form-group">
+                    <label>詢問類型</label>
+                    <select>
+                        <option>訂單問題</option>
+                        <option>宅配問題</option>
+                        <option>品牌合作</option>
+                        <option>客製蛋糕</option>
+                        <option>其他問題</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>訊息內容</label>
+                    <textarea placeholder="寫下想對我們說的話..."></textarea>
+                </div>
+
+                <button class="submit-btn">
+                    送出甜點訊息
+                </button>
+
+            </div>
+
+            <!-- INFO -->
+            <div class="info-card">
+
+                <h3>品牌資訊</h3>
+
+                <p>
+                    我們相信甜點不只是味道，
+                    更是一種能讓人慢下來的溫柔時刻。
+                </p>
+
+                <p><strong>客服信箱：</strong>hello@moowa.com</p>
+
+                <p><strong>回覆時間：</strong>每日 10:00 - 20:00</p>
+
+                <p><strong>Instagram：</strong>@moowa_00</p>
+
+                <p><strong>Facebook：</strong>MooWa</p>
+
+                <p><strong>LINE 官方：</strong>@moowa</p>
+
+                <div class="brand-quote">
+                    希望甜點能成為你生活中的小小療癒。
+                </div>
+
+                <div class="social-group">
+
+                    <a href="#" class="social-btn">IG</a>
+
+                    <a href="#" class="social-btn">FB</a>
+
+                    <a href="#" class="social-btn">L</a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section">
+
+        <h2 class="section-title">常見問題 FAQ</h2>
+
+        <div class="faq-container">
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    甜點保存期限多久？
+                </button>
+                <div class="faq-answer">
+                    <p>
+                        大部分甜點建議於冷藏 2～3 天內享用，
+                        以保留最佳風味與口感。
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    是否提供宅配？
+                </button>
+                <div class="faq-answer">
+                    <p>
+                        提供低溫宅配服務，
+                        部分區域也有指定時段配送。
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    幾天前需要預訂？
+                </button>
+                <div class="faq-answer">
+                    <p>
+                        建議至少提前 3～5 天預訂，
+                        客製蛋糕則建議更早安排。
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    是否能客製化蛋糕？
+                </button>
+                <div class="faq-answer">
+                    <p>
+                        可以，我們提供生日蛋糕與節慶甜點客製服務。
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    如何確認訂單完成？
+                </button>
+                <div class="faq-answer">
+                    <p>
+                        完成付款後，
+                        系統將寄送訂單確認信至您的 Email。
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- EMOTION -->
+    <section class="emotion-section">
+
+        <div class="emotion-box">
+
+            <div class="emotion-content">
+
+                <h2>
+                    今天也想用甜點療癒你的日常 ♡
+                </h2>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
+
+<!-- Footer -->
+<div class="footer"></div>
+
+<script src="main.js"></script>
+
+<script>
+
+const faqButtons = document.querySelectorAll(".faq-question");
+
+faqButtons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        const answer = button.nextElementSibling;
+
+        if(answer.style.maxHeight){
+            answer.style.maxHeight = null;
+        }else{
+            answer.style.maxHeight = answer.scrollHeight + "px";
+        }
+
+    });
+
+});
+
+</script>
+
+</body>
+
+</html>
